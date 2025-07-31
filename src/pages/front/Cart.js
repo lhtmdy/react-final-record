@@ -1,4 +1,4 @@
-import { useOutletContext } from "react-router-dom";
+import { NavLink, useOutletContext } from "react-router-dom";
 import { useEffect, useState, useRef, useContext } from "react";
 import DeleteModal from "../../components/DeleteModal";
 import { Modal } from "bootstrap";
@@ -149,12 +149,12 @@ function Cart() {
               <p className="mb-0 h4 fw-bold">總金額</p>
               <p className="mb-0 h4 fw-bold">NT${cartData.final_total}</p>
             </div>
-            <a
-              href="./checkout.html"
+            <NavLink
+              to="/checkout"
               className="btn btn-dark btn-block mt-4 rounded-0 py-3 w-100"
             >
               確認結帳
-            </a>
+            </NavLink>
           </div>
         </div>
       </div>
