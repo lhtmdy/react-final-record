@@ -12,8 +12,7 @@ function ProductModal({ handleCloseProductModal, info, action, getProducts }) {
     description: "",
     content: "",
     is_enabled: 1,
-    imageUrl:
-      "https://images.unsplash.com/photo-1709884735626-63e92727d8b6?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D",
+    imageUrl:"",
     imagesUrl: [],
   });
   const handleChange = (e) => {
@@ -113,6 +112,18 @@ function ProductModal({ handleCloseProductModal, info, action, getProducts }) {
                     className="form-control"
                     name="title"
                     value={model.title}
+                    onChange={handleChange}
+                  />
+                </label>
+              </div>
+              <div className="mb-2">
+                <label htmlFor="imageUrl" className="form-label w-100">
+                  圖片網址
+                  <input
+                    id="imageUrl"
+                    className="form-control"
+                    name="imageUrl"
+                    value={model.imageUrl}
                     onChange={handleChange}
                   />
                 </label>
