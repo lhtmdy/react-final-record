@@ -31,7 +31,7 @@ function FrontLayout() {
         <Message />
 
         <NavBar cartData={cartData}/>
-        <Outlet context={{getCartData}}/>
+        <Outlet context={{getCartData,cartData}}/>
         <AppFooter />
       </MessageContext.Provider>
     </>
