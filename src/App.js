@@ -1,4 +1,4 @@
-import {Routes,Route, Navigate} from 'react-router-dom';
+import {Routes,Route} from 'react-router-dom';
 import Login from './pages/Login';
 import Dashboard from './pages/admin/DashBoard';
 import AdminProducts from './pages/admin/AdminProducts';
@@ -9,6 +9,7 @@ import Products from './pages/front/Products';
 import ProductDetail from './pages/front/ProductDetail';
 import Cart from './pages/front/Cart';
 import Checkout from './pages/front/Checkout';
+import Success from './pages/front/Success';
 function App() {
   return (
     <div className="App">
@@ -20,6 +21,7 @@ function App() {
           <Route path='product/:id' element={<ProductDetail/>}></Route>
           <Route path='cart' element={<Cart/>}></Route>
           <Route path='checkout' element={<Checkout/>}></Route>
+          <Route path='success/:orderId' element={<Success/>}></Route>
 
         </Route>
         <Route path="/login" element={<Login/>}></Route>

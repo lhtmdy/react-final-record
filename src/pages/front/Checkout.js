@@ -7,7 +7,9 @@ import {
   handleSuccessMessage,
   handleErrorMessage,
 } from "../../store/message.store";
+import { useNavigate } from "react-router-dom";
 function Checkout() {
+      const navigate = useNavigate();
   const [, dispatch] = useContext(MessageContext);
   const {
     register,
@@ -37,7 +39,7 @@ function Checkout() {
         model
       );
       handleSuccessMessage(dispatch, res);
-
+       navigate("/success/" + res.data.orderId);
       console.log(data);
     } catch (error) {
       console.log(errors);
