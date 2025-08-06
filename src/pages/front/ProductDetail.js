@@ -1,20 +1,24 @@
 import { useEffect, useState, useContext } from "react";
 import axios from "axios";
-import { useParams,useOutletContext } from "react-router-dom";
-import {
-  MessageContext,
-  handleSuccessMessage,
-  handleErrorMessage,
-} from "../../store/message.store";
+import { useParams, useOutletContext } from "react-router-dom";
+// import {
+//   MessageContext,
+//   handleSuccessMessage,
+//   handleErrorMessage,
+// } from "../../store/message.store";
+
+import { useDispatch } from "react-redux";
+import { createAsyncMessage } from "../../slice/messageSlice";
+
 function ProductDetail() {
   const [product, setProduct] = useState([]);
   const [cartQuantity, setCartQuantity] = useState(1);
   const [isLoading, setIsLodaing] = useState(false);
   const { id } = useParams();
 
-  const {getCartData} = useOutletContext();
+  const { getCartData } = useOutletContext();
 
-  const [, dispatch] = useContext(MessageContext);
+  const dispatch = useDispatch();
 
   const getProduct = async (id) => {
     const productRes = await axios.get(
@@ -40,11 +44,13 @@ function ProductDetail() {
         }
       );
       console.log(res);
-      handleSuccessMessage(dispatch, res);
+      dispatch(createAsyncMessage(res.data));
+      // handleSuccessMessage(dispatch, res);
       setIsLodaing(false);
       getCartData();
     } catch (error) {
-      handleErrorMessage(dispatch, error.response);
+      dispatch(createAsyncMessage(error.response));
+      // handleErrorMessage(dispatch, error.response);
       setIsLodaing(false);
     }
   };

@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "../../components/NavBar";
 import AppFooter from "../../components/AppFooter";
-import Message from "../../components/Message";
+// import Message from "../../components/Message";
 import {
   MessageContext,
   messageReducer,
@@ -10,6 +10,9 @@ import {
 import { useReducer } from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import MessageToast from "../../components/MessageToast";
+
+
 function FrontLayout() {
   const [cartData, setCartData] = useState({});
 
@@ -28,7 +31,8 @@ function FrontLayout() {
   return (
     <>
       <MessageContext.Provider value={reducer}>
-        <Message />
+        {/* <Message /> */}
+        <MessageToast />
 
         <NavBar cartData={cartData}/>
         <Outlet context={{getCartData,cartData}}/>

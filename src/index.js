@@ -7,6 +7,9 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import axios from "axios";
 import { HashRouter } from "react-router-dom";
+import {store} from "./store";
+import {Provider} from "react-redux";
+
   const token = document.cookie
     .split("; ")
     .find((row) => row.startsWith("hexToken="))
@@ -19,7 +22,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <HashRouter>
+      <Provider store={store}>
       <App />
+      </Provider>
     </HashRouter>
   </React.StrictMode>
 );
