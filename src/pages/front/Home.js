@@ -141,7 +141,7 @@ function Home() {
                       style={{
                         width: "160px",
                         height: "160px",
-                        "object-fit": "cover",
+                        objectFit: "cover",
                       }}
                     />
                     <div className="d-flex flex-column">
@@ -167,7 +167,7 @@ function Home() {
                       style={{
                         width: "160px",
                         height: "160px",
-                        "object-fit": "cover",
+                        objectFit: "cover",
                       }}
                     />
                     <div className="d-flex flex-column">
@@ -193,7 +193,7 @@ function Home() {
                       style={{
                         width: "160px",
                         height: "160px",
-                        "object-fit": "cover",
+                        objectFit: "cover",
                       }}
                     />
                     <div className="d-flex flex-column">
@@ -243,7 +243,7 @@ function Home() {
             <img
               src="https://images.unsplash.com/photo-1548689816-c399f954f3dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
               alt=""
-              style={{ width: "48px", height: "48px", "object-fit": "cover" }}
+              style={{ width: "48px", height: "48px", objectFit: "cover" }}
             />
             <h4 className="mt-4">Lorem ipsum</h4>
             <p className="text-muted">
@@ -255,7 +255,7 @@ function Home() {
             <img
               src="https://images.unsplash.com/photo-1548689816-c399f954f3dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
               alt=""
-              style={{ width: "48px", height: "48px", "object-fit": "cover" }}
+              style={{ width: "48px", height: "48px", objectFit: "cover" }}
             />
             <h4 className="mt-4">Lorem ipsum</h4>
             <p className="text-muted">
@@ -267,7 +267,7 @@ function Home() {
             <img
               src="https://images.unsplash.com/photo-1548689816-c399f954f3dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
               alt=""
-              style={{ width: "48px", height: "48px", "object-fit": "cover" }}
+              style={{ width: "48px", height: "48px", objectFit: "cover" }}
             />
             <h4 className="mt-4">Lorem ipsum</h4>
             <p className="text-muted">

@@ -13,30 +13,28 @@ function NavBar({cartData}) {
               top: "50%",
             }}
           >
-            Navbar
+            Navbars
           </NavLink>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+         
+          <NavLink
+            className="navbar-brand position-absolute"
+            to="products"
+          
           >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+            產品列表
+          </NavLink>
+         
           <div
             className="collapse navbar-collapse bg-white custom-header-md-open"
             id="navbarNav"
           >
-            <ul className="navbar-nav">
-              <li className="nav-item active">
-                <NavLink className="nav-link ps-0" to="/products">
+            {/* <ul className="navbar-nav"> */}
+              {/* <li className="nav-item active"> */}
+                <NavLink className="nav-link text-black text-[20px] ps-0" to="/products">
                   產品列表
                 </NavLink>
-              </li>
-            </ul>
+              {/* </li> */}
+            {/* </ul> */}
           </div>
           <div className="d-flex">
             <NavLink to="#">
