@@ -53,6 +53,7 @@ function AdminProducts() {
     setCurrentItem({});
     productModal.current.show();
   };
+  
   const handleCloseProductModal = () => {
     productModal.current.hide();
   };

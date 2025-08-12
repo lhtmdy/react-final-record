@@ -43,12 +43,13 @@ export function handleSuccessMessage(dispatch, res) {
 }
 
 export function handleErrorMessage(dispatch, res) {
+  console.error("Error response:", res);
   dispatch({
     type: "POST_MESSAGE",
     payload: {
       type: 'danger',
       title: "失敗",
-      content: Array.isArray(res.data.message) ? res.data.message.join(", ") : res.data.message || "操作失敗",
+      content: Array.isArray(res?.data?.message) ? res.data.message.join(", ") : res?.data?.message || "操作失敗",
     },
   });
   
