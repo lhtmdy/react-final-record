@@ -11,7 +11,7 @@ export default function ExampleNumberField({ label, value, name,onChange }) {
           {label}
         </label>
         <NumberField.ScrubAreaCursor className={styles.ScrubAreaCursor}>
-          <CursorGrowIcon />
+          <CursorGrowIcon onClick={()=>value++}/>
         </NumberField.ScrubAreaCursor>
       </NumberField.ScrubArea>
 
