@@ -26,7 +26,7 @@
 }
 
 .btn-danger {
-  @apply bg-pink-06;
+  @apply bg-pink-05;
   &:hover {
     @apply bg-pink-04 text-white;
   }
@@ -38,15 +38,15 @@
   }
 }
 .btn-approved {
-  @apply bg-green-06;
+  @apply bg-purple-06;
   &:hover {
-    @apply bg-green-05 text-white;
+    @apply bg-purple-05 text-white;
   }
   &:disabled {
-    @apply bg-green-01 !text-green-03 border-green-02 cursor-not-allowed;
+    @apply bg-purple-01 !text-purple-03 border-purple-02 cursor-not-allowed;
   }
   &:focus {
-    @apply bg-green-04;
+    @apply bg-purple-04;
   }
 }
 

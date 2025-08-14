@@ -89,18 +89,18 @@ export default function FormModal({
     console.log("info", info);
     if (action === "edit" && info) {
       setModel(info);
-    } else if (action === "create") {
+    } else  {
       setModel({
         title: "",
         category: "",
-        origin_price: 100,
-        price: 300,
-        unit: "個",
+        origin_price: 0,
+        price: 0,
+        unit: "",
         description: "",
         content: "",
         is_enabled: 0,
         imageUrl:
-          "https://images.unsplash.com/photo-1709884735626-63e92727d8b6?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D",
+          "",
         imagesUrl: [],
       });
     }
@@ -112,7 +112,7 @@ export default function FormModal({
         <div className="w-[640px] bg-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  rounded max-h-[90vh]">
           <AppModalHeader
             className="bg-green-06"
-            title="產品新增"
+            title={action === "edit" ? "編輯產品" : "新增產品"}
             onClose={handleClose}
           ></AppModalHeader>
            <AppModalBody>

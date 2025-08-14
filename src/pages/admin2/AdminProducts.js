@@ -66,6 +66,17 @@ function AdminProducts() {
     console.log("Open modal:", open);
   };
   const columns = [
+    {
+      field: "",
+      headerName: "序號",
+      renderCell: (params) => {
+        const index = products.findIndex(
+          (product) => product.id === params.row.id
+        );
+        return index + 1;
+      },
+    },
+
     { field: "category", headerName: "分類" },
     { field: "title", headerName: "名稱" },
     { field: "price", headerName: "售價" },
@@ -101,9 +112,7 @@ function AdminProducts() {
         <h1 className=" text-h3 relative pl-[12px]  font-bold before:content-[''] before:bg-green-04 before:inline-block before:w-1 before:h-[18px] before:translate-y-[-50%] before:top-[50%] before:absolute before:left-0">
           產品管理
         </h1>
-        <AppButton onClick={handleOpenProductModal}>
-          新增
-        </AppButton>
+        <AppButton onClick={handleOpenProductModal}>新增</AppButton>
       </div>
       <AppDataTable
         columns={columns}
