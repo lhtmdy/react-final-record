@@ -1,0 +1,58 @@
+{
+  "h1": [
+    "40px",
+    {
+      "lineHeight": "1.2",
+      "letterSpacing": 0,
+      "fontWeight": 700
+    }
+  ],
+  "h2": [
+    "32px",
+    {
+      "lineHeight": "1.2",
+      "letterSpacing": 0,
+      "fontWeight": 700
+    }
+  ],
+  "h3": [
+    "24px",
+    {
+      "lineHeight": "1.4",
+      "letterSpacing": 0,
+      "fontWeight": 700
+    }
+  ],
+  "h4": [
+    "20px",
+    {
+      "lineHeight": "1.4",
+      "letterSpacing": 0,
+      "fontWeight": 700
+    }
+  ],
+  "h5": [
+    "18px",
+    {
+      "lineHeight": "1.6",
+      "letterSpacing": 0,
+      "fontWeight": 700
+    }
+  ],
+  "p": [
+    "16px",
+    {
+      "lineHeight": "1.6",
+      "letterSpacing": 0,
+      "fontWeight": 400
+    }
+  ],
+  "p2": [
+    "14px",
+    {
+      "lineHeight": "1.6",
+      "letterSpacing": 0,
+      "fontWeight": 400
+    }
+  ]
+}
