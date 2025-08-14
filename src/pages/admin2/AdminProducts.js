@@ -4,12 +4,12 @@ import { useEffect, useState, useContext } from "react";
 import FormModal from "./components/FormModal";
 import AppDeleteModal from "../../components/AppDeleteModal";
 import AppButtonGroup from "../../components/AppButtonGroup";
+import AppButton from "../../components/AppButton";
 import {
   MessageContext,
   handleSuccessMessage,
   handleErrorMessage,
 } from "../../store/message.store";
-import Button from "@mui/material/Button";
 
 function AdminProducts() {
   const [products, setProducts] = useState([]);
@@ -66,26 +66,24 @@ function AdminProducts() {
     console.log("Open modal:", open);
   };
   const columns = [
-    { field: "category", headerName: "分類", },
-    { field: "title", headerName: "名稱", },
-    { field: "price", headerName: "售價", },
-    { field: "is_enabled", headerName: "啟用狀態",  },
+    { field: "category", headerName: "分類" },
+    { field: "title", headerName: "名稱" },
+    { field: "price", headerName: "售價" },
+    { field: "is_enabled", headerName: "啟用狀態" },
     {
       field: "actions",
       headerName: "編輯",
-      flex: 1 ,
+      flex: 1,
       renderCell: (rowData) => {
         return (
           <AppButtonGroup>
-            <Button
-            variant="contained" color="success"
-              onClick={() => handleEdit(rowData.row)}
+            <AppButton onClick={() => handleEdit(rowData.row)}>編輯</AppButton>
+            <AppButton
+              danger
+              onClick={() => handleOpenDeleteModal(rowData.row)}
             >
-              編輯
-            </Button>
-            <Button variant="outlined" color="error"   onClick={() => handleOpenDeleteModal(rowData.row)}>
               刪除
-            </Button>
+            </AppButton>
           </AppButtonGroup>
         );
       },
@@ -100,12 +98,12 @@ function AdminProducts() {
   return (
     <div>
       <div className="flex justify-between items-center mb-4">
-        <h1 className=" relative pl-[12px] text-2xl font-bold before:content-[''] before:bg-green-400 before:inline-block before:w-1 before:h-[18px] before:translate-y-[-50%] before:top-[50%] before:absolute before:left-0">
+        <h1 className=" text-h3 relative pl-[12px]  font-bold before:content-[''] before:bg-green-04 before:inline-block before:w-1 before:h-[18px] before:translate-y-[-50%] before:top-[50%] before:absolute before:left-0">
           產品管理
         </h1>
-        <Button variant="contained" onClick={handleOpenProductModal}>
+        <AppButton onClick={handleOpenProductModal}>
           新增
-        </Button>
+        </AppButton>
       </div>
       <AppDataTable
         columns={columns}

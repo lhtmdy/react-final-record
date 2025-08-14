@@ -1,0 +1,71 @@
+
+.btn {
+  transition: background-color 0.3s;
+  @apply bg-green-06 text-[#fff] px-4 py-0 rounded min-h-[40px] flex items-center justify-center text-p leading-[24px] !font-bold border border-transparent text-nowrap w-fit outline-none;
+  &:hover {
+    @apply bg-green-05;
+  }
+  &:disabled {
+    @apply bg-green-01 text-green-03 border-green-02 cursor-not-allowed;
+  }
+  &:focus {
+    @apply bg-green-04;
+  }
+}
+.btn-secondary {
+  @apply bg-gray-03 text-gray-06;
+  &:hover {
+    @apply bg-gray-02;
+  }
+  &:disabled {
+    @apply bg-gray-02 text-gray-04 border-gray-03 cursor-not-allowed;
+  }
+  &:focus {
+    @apply bg-gray-04;
+  }
+}
+
+.btn-danger {
+  @apply bg-pink-06;
+  &:hover {
+    @apply bg-pink-04 text-white;
+  }
+  &:disabled {
+    @apply bg-pink-01 !text-pink-03 border-pink-02 cursor-not-allowed;
+  }
+  &:focus {
+    @apply bg-pink-04;
+  }
+}
+.btn-approved {
+  @apply bg-green-06;
+  &:hover {
+    @apply bg-green-05 text-white;
+  }
+  &:disabled {
+    @apply bg-green-01 !text-green-03 border-green-02 cursor-not-allowed;
+  }
+  &:focus {
+    @apply bg-green-04;
+  }
+}
+
+.btn-lg {
+  @apply min-h-[48px] text-[18px] leading-[28px];
+}
+
+.btn-sm {
+  @apply min-h-[32px] text-p leading-[25.6px] px-3;
+}
+
+.btn-icon {
+  @apply w-[50px] h-[40px] !p-0 text-p;
+}
+
+.btn-icon.btn-lg {
+  @apply w-[50px] h-[48px];
+}
+
+.btn-icon.btn-sm {
+  @apply w-[42px] h-[32px];
+}

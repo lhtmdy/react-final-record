@@ -1,17 +1,29 @@
-import { useEffect, useState,useContext } from "react";
+import { useEffect, useState, useContext } from "react";
 import Modal from "@mui/material/Modal";
-import AppInput from "../../../components/AppInput";
-import AppInputNumber from "../../../components/AppInputNumber";
-import AppCheckbox from "../../../components/AppCheckbox";
-import Button from "@mui/material/Button";
+import AppInput from "@/components/AppInput";
+import AppInputNumber from "@/components/AppInputNumber";
+import AppCheckbox from "@/components/AppCheckbox";
 import axios from "axios";
-import { MessageContext,handleSuccessMessage,handleErrorMessage } from "../../../store/message.store";
+import {
+  MessageContext,
+  handleSuccessMessage,
+  handleErrorMessage,
+} from "@/store/message.store";
+import AppButton from "@/components/AppButton";
+import AppModalBody from "@/components/AppModalBody";
+import AppModalHeader from "@/components/AppModalHeader";
+import AppModalFooter from "@/components/AppModalFooter";
 
-export default function FormModal({ open, setOpen, info, action,getProducts }) {
-
+export default function FormModal({
+  open,
+  setOpen,
+  info,
+  action,
+  getProducts,
+}) {
   const handleClose = () => setOpen(false);
   console.log("Modal info:", info);
-    const [,dispatch] = useContext(MessageContext);
+  const [, dispatch] = useContext(MessageContext);
   const [model, setModel] = useState({
     title: "",
     category: "",
@@ -28,7 +40,7 @@ export default function FormModal({ open, setOpen, info, action,getProducts }) {
   const handleChange = (e) => {
     console.log("Input changed:", e);
     const { name, value } = e.target;
-    if (['origin_price','price'].includes(name)) {
+    if (["origin_price", "price"].includes(name)) {
       setModel({ ...model, [name]: Number(value) });
     } else if (name === "is_enabled") {
       // setModel({ ...model, [name]: e.target.checked ? 1 : 0 });
@@ -40,7 +52,7 @@ export default function FormModal({ open, setOpen, info, action,getProducts }) {
     // Handle input changes here, e.g., update state or form data
   };
 
- const handleSave = async () => {
+  const handleSave = async () => {
     try {
       if (action === "edit") {
         const res = await axios.put(
@@ -57,7 +69,7 @@ export default function FormModal({ open, setOpen, info, action,getProducts }) {
           { data: model }
         );
         console.log(res);
-          dispatch({
+        dispatch({
           type: "POST_MESSAGE",
           payload: {
             content: res.data.message || "操作成功",
@@ -67,9 +79,8 @@ export default function FormModal({ open, setOpen, info, action,getProducts }) {
         handleSuccessMessage(dispatch, res);
         getProducts();
       }
-      
     } catch (error) {
-      console.log('error,', error);
+      console.log("error,", error);
       handleErrorMessage(dispatch, error.response);
     }
   };
@@ -98,7 +109,14 @@ export default function FormModal({ open, setOpen, info, action,getProducts }) {
   return (
     <div>
       <Modal open={open} onClose={handleClose}>
-        <div className="bg-white absolute top-1/2 left-1/2 w-[640px] transform -translate-x-1/2 -translate-y-1/2 p-4 rounded shadow-lg overflow-y-scroll max-h-[90vh]">
+        <div className="w-[640px] bg-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  rounded max-h-[90vh]">
+          <AppModalHeader
+            className="bg-green-06"
+            title="產品新增"
+            onClose={handleClose}
+          ></AppModalHeader>
+           <AppModalBody>
+
           <div className="flex items-center flex-col gap-y-4 !w-full ">
             <AppInput
               id="outlined-basic"
@@ -182,12 +200,23 @@ export default function FormModal({ open, setOpen, info, action,getProducts }) {
               className="w-full"
             />
           </div>
-          <div className="ml-auto mt-5 w-fit flex gap-x-2">
+           </AppModalBody>
+            <AppModalFooter>
+            <AppButton secondary onClick={handleClose}>
+              取消
+            </AppButton>
+            <AppButton  onClick={handleSave}>
+              儲存
+            </AppButton>
+          </AppModalFooter>
+          {/* <div className="ml-auto mt-5 w-fit flex gap-x-2">
             <Button variant="outlined" onClick={handleClose}>
               取消
             </Button>
-            <Button variant="contained" onClick={handleSave}>儲存</Button>
-          </div>
+            <Button variant="contained" onClick={handleSave}>
+              儲存
+            </Button>
+          </div> */}
         </div>
       </Modal>
     </div>

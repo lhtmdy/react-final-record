@@ -3,6 +3,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import Pagination from "@mui/material/Pagination";
 import Paper from "@mui/material/Paper";
 // import { useState } from "react";
+import { greenColor } from "../tailwindcss/color";
 
 function AppDataTable({ rows, columns, paginationModel, setPagination }) {
   // const [paginationModel, setPaginationModel] = useState({
@@ -23,7 +24,7 @@ function AppDataTable({ rows, columns, paginationModel, setPagination }) {
         disableRowSelectionOnClick
         getRowHeight={() => "auto"}
         getRowClassName={(params) =>
-          params.indexRelativeToCurrentPage % 2 === 0 ? "" : "bg-[#FAFAFA]"
+          params.indexRelativeToCurrentPage % 2 === 0 ? "" : "bg-gray-02"
         }
         rows={rows}
         columns={columns}
@@ -38,7 +39,7 @@ function AppDataTable({ rows, columns, paginationModel, setPagination }) {
             outline: "none",
           },
           "& .MuiDataGrid-columnHeader": {
-            backgroundColor: "#666666",
+             background: greenColor['07'],
           },
           "& .MuiDataGrid-columnHeaderTitle": {
             color: "#fff",
