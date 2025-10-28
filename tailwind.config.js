@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 import { purpleColor, blueColor, greenColor, pinkColor, yellowColor, grayColor,orangeColor } from './src/tailwindcss/color.js'
 import fontSize from './src/tailwindcss/fontSize.json'
+import aspectRatio from '@tailwindcss/aspect-ratio'
 module.exports = {
   content: [
      "./src/**/*.{js,jsx,ts,tsx}",
@@ -36,6 +37,6 @@ module.exports = {
       ...fontSize,
     },
   },
-  plugins: [],
+   plugins: [aspectRatio],
 }
 

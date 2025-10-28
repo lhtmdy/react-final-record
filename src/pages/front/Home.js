@@ -1,8 +1,8 @@
 function Home() {
   return (
     <>
-    <div className="w-100">
-      <div className="container">
+      <div className="w-100">
+        {/* <div className="container">
         <div className="row flex-md-row-reverse flex-column">
           <div className="col-md-6">
             <img
@@ -122,13 +122,11 @@ function Home() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="bg-light mt-7">
-        <div className="container">
+      </div> */}
+        {/* <div className="bg-green-01 mt-7">
+        <div className="flex">
           <div
-            id="carouselExampleControls"
             className="carousel slide"
-            data-ride="carousel"
           >
             <div className="carousel-inner">
               <div className="carousel-item active">
@@ -236,67 +234,79 @@ function Home() {
             </a>
           </div>
         </div>
-      </div>
-      <div className="container my-7">
-        <div className="row">
-          <div className="col-md-4">
-            <img
-              src="https://images.unsplash.com/photo-1548689816-c399f954f3dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
-              alt=""
-              style={{ width: "48px", height: "48px", objectFit: "cover" }}
-            />
-            <h4 className="mt-4">Lorem ipsum</h4>
-            <p className="text-muted">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna.
-            </p>
+      </div> */}
+        <div className="bg-purple-03 p-10">
+          <div className="w-[200px] h-[200px] overflow-hidden rounded-full">
+            <div className="aspect-w-1 aspect-h-1 overflow-hidden mb-4">
+              <img
+                src="https://images.unsplash.com/photo-1490138139357-fc819d02e344?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+                className="object-cover "
+              />
+            </div>
           </div>
-          <div className="col-md-4">
-            <img
-              src="https://images.unsplash.com/photo-1548689816-c399f954f3dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
-              alt=""
-              style={{ width: "48px", height: "48px", objectFit: "cover" }}
-            />
-            <h4 className="mt-4">Lorem ipsum</h4>
-            <p className="text-muted">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna.
-            </p>
-          </div>
-          <div className="col-md-4">
-            <img
-              src="https://images.unsplash.com/photo-1548689816-c399f954f3dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
-              alt=""
-              style={{ width: "48px", height: "48px", objectFit: "cover" }}
-            />
-            <h4 className="mt-4">Lorem ipsum</h4>
-            <p className="text-muted">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna.
-            </p>
-          </div>
+          {/* <div className="rounded-full w-[100px] h-[100px] object-cover overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1490138139357-fc819d02e344?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" className="w-full" />
+          </div> */}
         </div>
-      </div>
-      <div className="bg-light py-7">
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-md-4 text-center">
-              <h3>Lorem ipsum</h3>
+        <div className="container my-7">
+          <div className="row">
+            <div className="col-md-4">
+              <img
+                src="https://images.unsplash.com/photo-1548689816-c399f954f3dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
+                alt=""
+                style={{ width: "48px", height: "48px", objectFit: "cover" }}
+              />
+              <h4 className="mt-4">Lorem ipsum</h4>
               <p className="text-muted">
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod.
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna.
               </p>
-              <button className="btn btn-dark mt-4 rounded-0">
-                Lorem ipsum
-              </button>
+            </div>
+            <div className="col-md-4">
+              <img
+                src="https://images.unsplash.com/photo-1548689816-c399f954f3dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
+                alt=""
+                style={{ width: "48px", height: "48px", objectFit: "cover" }}
+              />
+              <h4 className="mt-4">Lorem ipsum</h4>
+              <p className="text-muted">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna.
+              </p>
+            </div>
+            <div className="col-md-4">
+              <img
+                src="https://images.unsplash.com/photo-1548689816-c399f954f3dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
+                alt=""
+                style={{ width: "48px", height: "48px", objectFit: "cover" }}
+              />
+              <h4 className="mt-4">Lorem ipsum</h4>
+              <p className="text-muted">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="bg-light py-7">
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-md-4 text-center">
+                <h3>Lorem ipsum</h3>
+                <p className="text-muted">
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  diam nonumy eirmod.
+                </p>
+                <button className="btn btn-dark mt-4 rounded-0">
+                  Lorem ipsum
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </>
   );
 }
-
 
 export default Home;

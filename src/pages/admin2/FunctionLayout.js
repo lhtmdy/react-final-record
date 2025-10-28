@@ -1,3 +1,11 @@
+import * as React from "react";
+import { styled } from "@mui/material/styles";
+import List from "@mui/material/List";
+
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import AppIcon from "@/components/AppIcon";
 import { Outlet, NavLink } from "react-router-dom";
 import Message from "../../components/Message";
 import {
@@ -6,33 +14,73 @@ import {
   initState,
 } from "../../store/message.store";
 import { useReducer } from "react";
-function FunctionLayout() {
+const drawerWidth = 240;
+
+const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
+  ({ theme }) => ({
+    flexGrow: 1,
+    padding: theme.spacing(3),
+    transition: theme.transitions.create("margin", {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    marginLeft: `-${drawerWidth}px`,
+    variants: [
+      {
+        props: ({ open }) => open,
+        style: {
+          transition: theme.transitions.create("margin", {
+            easing: theme.transitions.easing.easeOut,
+            duration: theme.transitions.duration.enteringScreen,
+          }),
+          marginLeft: 0,
+        },
+      },
+    ],
+  })
+);
+
+export default function PersistentDrawerLeft() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleToggleDrawer = () => {
+    setOpen(!open);
+  };
+
+  const menuLinks = [
+    { to: "/admin/products", label: "產品管理" },
+    { to: "/admin/coupons", label: "優惠券管理" },
+  ];
+
   const reducer = useReducer(messageReducer, initState);
   return (
     <>
       <MessageContext.Provider value={reducer}>
         <Message />
-        <div className="relative w-screen h-screen">
-          <header className="bg-gray-800 text-white p-4 fixed top-0 left-0 right-0">
-            <NavLink to="/">
-              <p>後台管理系統</p>
-            </NavLink>
-          </header>
-          <div className="flex mt-[72px] absolute top-0 left-0 right-0 bottom-0 overflow-hidden">
-            <div className="w-64 bg-gray-200 p-4">
-              <ul>
-                <li className="py-3">產品管理</li>
-                <li>優惠券管理</li>
-              </ul>
-            </div>
-            <div className="w-1 grow p-4 bg-gray-50 overflow-auto">
+        <div className="flex">
+          <div>
+            <ul>
+              {menuLinks.map((item, index) => (
+                <li key={item.label} className="border">
+                  <NavLink to={item.to}>
+                    <ListItemText primary={item.label} />
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="w-1 grow realative ">
+            <header className="bg-green-06 text-white p-4  border-[3px] w-full">
+              <button onClick={handleToggleDrawer} className="!text-[30px]">
+                <AppIcon name="bars" className="text-[30px]" />
+              </button>
+            </header>
+            <Main open={open}>
               <Outlet />
-            </div>
+            </Main>
           </div>
         </div>
       </MessageContext.Provider>
     </>
   );
 }
-
-export default FunctionLayout;

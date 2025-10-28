@@ -1,54 +1,22 @@
 import { NavLink } from "react-router-dom";
-function NavBar({cartData}) {
+function NavBar({ cartData }) {
   return (
-    <div className="bg-white sticky-top">
-      <div className="container">
-        <nav className="navbar px-0 navbar-expand-lg navbar-light bg-white">
-          <NavLink
-            className="navbar-brand position-absolute"
-            to=""
-            style={{
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              top: "50%",
-            }}
-          >
-            Navbars
+    <div className="bg-white fixed top-0 left-0 w-full z-50 shadow  p-3">
+      <nav className=" bg-white flex justify-between">
+        <NavLink className="" to="products">
+          產品列表
+        </NavLink>
+        <NavLink className="" to=""></NavLink>
+        <div className="flex">
+          <NavLink to="#">
+            <i className="fas fa-heart me-5"></i>
           </NavLink>
-         
-          <NavLink
-            className="navbar-brand position-absolute"
-            to="products"
-          
-          >
-            產品列表
+          <NavLink to="/cart" className=" position-relative">
+            <i className="bi bi-bag-fill"></i>
+            <span className="">{cartData?.carts?.length || 0}</span>
           </NavLink>
-         
-          <div
-            className="collapse navbar-collapse bg-white custom-header-md-open"
-            id="navbarNav"
-          >
-            {/* <ul className="navbar-nav"> */}
-              {/* <li className="nav-item active"> */}
-                <NavLink className="nav-link text-black text-[20px] ps-0" to="/products">
-                  產品列表
-                </NavLink>
-              {/* </li> */}
-            {/* </ul> */}
-          </div>
-          <div className="d-flex">
-            <NavLink to="#">
-              <i className="fas fa-heart me-5"></i>
-            </NavLink>
-            <NavLink to="/cart" className="nav-link position-relative">
-              <i className="bi bi-bag-fill"></i>
-              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                {cartData?.carts?.length || 0}
-              </span>
-            </NavLink>
-          </div>
-        </nav>
-      </div>
+        </div>
+      </nav>
     </div>
   );
 }

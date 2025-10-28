@@ -1,5 +1,5 @@
-import clsx from "clsx"; // 或使用其他 className 合併工具
-import "../components/style/AppButton.css"; // 將 CSS 樣式移到單獨的文件
+import clsx from "clsx"; 
+import "../components/style/AppButton.css"; 
 const AppButton = ({
   children,
   end,
@@ -10,8 +10,11 @@ const AppButton = ({
   large,
   small,
   onClick,
+  className,
+  icon,
+  type="button"
 }) => {
-  const buttonClasses = clsx("btn", {
+  const buttonClasses = clsx(`btn ${className}`, {
     "btn-secondary": secondary,
     "btn-danger": danger,
     "btn-approved": approved,
@@ -19,9 +22,10 @@ const AppButton = ({
     "btn-sm": small,
     "mx-auto": center,
     "ml-auto": end,
+    "btn-icon":icon
   });
   return (
-    <button type="button" className={buttonClasses} onClick={onClick}>
+    <button type={type} className={buttonClasses} onClick={onClick}>
       {children}
     </button>
   );

@@ -20,29 +20,26 @@ function Products() {
 
   return (
     <>
-      <div className="container mt-md-5 mt-3 mb-7">
-        <div className="row">
+      <div className="px-4">
+        <div className="grid grid-cols-4 gap-4">
           {products.map((item) => {
             return (
-              <div className="col-md-3" key={item.id}>
-                <div className="card border-0 mb-4 position-relative position-relative">
+                <div className="  shadow rounded-t-[20px] overflow-hidden rounded-b-[12px]" key={item.id}>
                   <img
                     src={item.imageUrl}
-                    className="card-img-top rounded-0 object-cover"
+                    className="w-full h-60 object-cover"
                     alt={item.title}
-                    style={{ height: "200px" }}
                   />
-                  <div className="card-body p-0">
-                    <h4 className="mb-0 mt-2">
+                  <div className="p-4 flex flex-col justify-between gap-y-4">
+                    <h4 className=" mt-2 text-h4 text-blue-07 mb-2 line-clamp-1">
                       <Link to={`/product/${item.id}`}>{item.title}</Link>
                     </h4>
-                    <p className="card-text text-muted mb-0">
+                    <p className="line-clamp-2 text-gray-06">
                       {item.description}
                     </p>
-                    <p className="text-muted mt-3">NT$ {item.price}</p>
+                    <p className="font-blod text-h5 text-pink-06">NT$ {item.price}</p>
                   </div>
                 </div>
-              </div>
             );
           })}
         </div>

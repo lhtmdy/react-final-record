@@ -1,0 +1,28 @@
+{
+    "prettier.enable": true,
+    "editor.formatOnSave": true, // 在保存文件時自動格式化
+  
+    "[vue]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.startupEditor": "newUntitledFile",
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.trailingComma": "all",
+    "prettier.bracketSameLine": true,
+    "prettier.htmlWhitespaceSensitivity": "ignore",
+    "prettier.printWidth": 100,
+  
+    // Auto fix
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never",
+      "source.fixAll.eslint": "never"
+    },
+    "eslint.useFlatConfig": true,
+    "vue.codeActions.enabled": false,
+    "singleQuote": true
+  }

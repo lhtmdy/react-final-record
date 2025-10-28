@@ -1,0 +1,10 @@
+.app-form-table {
+  @apply w-full table-fixed border border-gray-04 border-collapse;
+}
+th {
+  @apply bg-blue-01 px-3 py-[7px] border border-blue-04 text-p text-left;
+}
+
+td {
+  @apply bg-white px-3 py-[7px] border border-gray-04 text-p text-gray-06;
+}

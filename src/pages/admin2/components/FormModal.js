@@ -119,59 +119,51 @@ export default function FormModal({
 
           <div className="flex items-center flex-col gap-y-4 !w-full ">
             <AppInput
-              id="outlined-basic"
               label="名稱"
-              variant="outlined"
               value={model.title}
               name="title"
               onChange={handleChange}
               className="w-full"
             />
             <AppInput
-              id="outlined-basic"
               label="圖片網址"
-              variant="outlined"
+             
               value={model.imageUrl}
               name="imageUrl"
               onChange={handleChange}
               className="w-full"
             />
             <AppInput
-              id="outlined-basic"
               label="分類"
-              variant="outlined"
+             
               value={model.category}
               name="category"
               onChange={handleChange}
             />
             <AppInput
-              id="outlined-basic"
               label="單位"
-              variant="outlined"
+             
               value={model.unit}
               name="unit"
               onChange={handleChange}
             />
             <AppInputNumber
-              id="outlined-basic"
               label="原價"
-              variant="outlined"
+             
               value={model.origin_price}
               name="origin_price"
               onChange={handleChange}
             />
             <AppInputNumber
-              id="outlined-basic"
               label="售價"
-              variant="outlined"
+             
               value={model.price}
               name="price"
               onChange={handleChange}
             />
             <AppInput
-              id="outlined-basic"
               label="產品描述"
-              variant="outlined"
+             
               value={model.description}
               name="description"
               onChange={handleChange}
@@ -180,9 +172,8 @@ export default function FormModal({
               maxRows={4}
             />
             <AppInput
-              id="outlined-basic"
               label="說明內容"
-              variant="outlined"
+             
               value={model.content}
               name="content"
               onChange={handleChange}
@@ -191,9 +182,8 @@ export default function FormModal({
               maxRows={4}
             />
             <AppCheckbox
-              id="outlined-basic"
               label="是否啟用"
-              variant="outlined"
+             
               value={model.is_enabled}
               name="is_enabled"
               onChange={handleChange}
@@ -210,7 +200,7 @@ export default function FormModal({
             </AppButton>
           </AppModalFooter>
           {/* <div className="ml-auto mt-5 w-fit flex gap-x-2">
-            <Button variant="outlined" onClick={handleClose}>
+            <Button onClick={handleClose}>
               取消
             </Button>
             <Button variant="contained" onClick={handleSave}>

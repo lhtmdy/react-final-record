@@ -1,4 +1,3 @@
-
 .btn {
   transition: background-color 0.3s;
   @apply bg-green-06 text-[#fff] px-4 py-0 rounded min-h-[40px] flex items-center justify-center text-p leading-[24px] !font-bold border border-transparent text-nowrap w-fit outline-none;
@@ -38,15 +37,15 @@
   }
 }
 .btn-approved {
-  @apply bg-purple-06;
+  @apply bg-yellow-06;
   &:hover {
-    @apply bg-purple-05 text-white;
+    @apply bg-yellow-05 text-white;
   }
   &:disabled {
-    @apply bg-purple-01 !text-purple-03 border-purple-02 cursor-not-allowed;
+    @apply bg-yellow-01 !text-yellow-03 border-yellow-02 cursor-not-allowed;
   }
   &:focus {
-    @apply bg-purple-04;
+    @apply bg-yellow-04;
   }
 }
 
@@ -59,7 +58,7 @@
 }
 
 .btn-icon {
-  @apply w-[50px] h-[40px] !p-0 text-p;
+  @apply w-[40px] h-[40px] !p-0 text-p;
 }
 
 .btn-icon.btn-lg {

@@ -19,7 +19,7 @@
       </div>
     </>)
   }
-  export  const Input = ({ id, labelText, register, type, errors, rules }) => {
+  export const Input = ({ id, labelText, register, type, errors, rules }) => {
     return (
       <>
         <label htmlFor={id} className='form-label'>
@@ -37,7 +37,7 @@
       </>
     );
   };
-  export  const Select = ({ id, labelText, register, errors, rules, children, disabled = false }) => {
+  export const Select = ({ id, labelText, register, errors, rules, children, disabled = false }) => {
     return (
       <>
         <label htmlFor={id} className='form-label'>
